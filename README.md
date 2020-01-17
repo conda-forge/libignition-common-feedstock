@@ -1,5 +1,5 @@
-About libignition-common
-========================
+About libignition-common3
+=========================
 
 Home: https://bitbucket.org/ignitionrobotics/ign-common
 
@@ -67,27 +67,27 @@ Current release info
 
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-libignition--common-green.svg)](https://anaconda.org/conda-forge/libignition-common) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libignition-common.svg)](https://anaconda.org/conda-forge/libignition-common) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libignition-common.svg)](https://anaconda.org/conda-forge/libignition-common) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libignition-common.svg)](https://anaconda.org/conda-forge/libignition-common) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-libignition--common3-green.svg)](https://anaconda.org/conda-forge/libignition-common3) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/libignition-common3.svg)](https://anaconda.org/conda-forge/libignition-common3) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/libignition-common3.svg)](https://anaconda.org/conda-forge/libignition-common3) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/libignition-common3.svg)](https://anaconda.org/conda-forge/libignition-common3) |
 
-Installing libignition-common
-=============================
+Installing libignition-common3
+==============================
 
-Installing `libignition-common` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
+Installing `libignition-common3` from the `conda-forge` channel can be achieved by adding `conda-forge` to your channels with:
 
 ```
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `libignition-common` can be installed with:
+Once the `conda-forge` channel has been enabled, `libignition-common3` can be installed with:
 
 ```
-conda install libignition-common
+conda install libignition-common3
 ```
 
-It is possible to list all of the versions of `libignition-common` available on your platform with:
+It is possible to list all of the versions of `libignition-common3` available on your platform with:
 
 ```
-conda search libignition-common --channel conda-forge
+conda search libignition-common3 --channel conda-forge
 ```
 
 
@@ -129,17 +129,17 @@ Terminology
                   produce the finished article (built conda distributions)
 
 
-Updating libignition-common-feedstock
-=====================================
+Updating libignition-common3-feedstock
+======================================
 
-If you would like to improve the libignition-common recipe or build a new
+If you would like to improve the libignition-common3 recipe or build a new
 package version, please fork this repository and submit a PR. Upon submission,
 your changes will be run on the appropriate platforms to give the reviewer an
 opportunity to confirm that the changes result in a successful build. Once
 merged, the recipe will be re-built and uploaded automatically to the
 `conda-forge` channel, whereupon the built conda packages will be available for
 everybody to install and use from the `conda-forge` channel.
-Note that all branches in the conda-forge/libignition-common-feedstock are
+Note that all branches in the conda-forge/libignition-common3-feedstock are
 immediately built and any created packages are uploaded, so PRs should be based
 on branches in forks and branches in the main repository should only be used to
 build distinct package versions.
