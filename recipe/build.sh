@@ -13,4 +13,3 @@ cmake .. \
 
 cmake --build . --config Release
 cmake --build . --config Release --target install
-ctest -C Release -E "INTEGRATION|PERFORMANCE|REGRESSION|UNIT_Filesystem_TEST" -VV
