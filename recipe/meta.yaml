@@ -15,7 +15,7 @@ source:
       - librt_linkage.patch
 
 build:
-  number: 0
+  number: 1
   skip: true  # [win and vc<14 or osx]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -33,10 +33,14 @@ requirements:
     - libignition-math6
     - dlfcn-win32  # [win]
     - libuuid      # [not win]
+    - freeimage
+    - gts
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
     - libuuid      # [not win]
+    - freeimage
+    - gts
 
 test:
   commands:
