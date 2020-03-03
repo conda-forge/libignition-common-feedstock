@@ -35,12 +35,14 @@ requirements:
     - libuuid      # [not win]
     - freeimage
     - gts
+    - tinyxml2
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
     - libuuid      # [not win]
     - freeimage
     - gts
+    - tinyxml2
 
 test:
   commands:
