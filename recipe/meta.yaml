@@ -15,7 +15,7 @@ source:
       - librt_linkage.patch
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14 or osx]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -35,14 +35,14 @@ requirements:
     - libuuid      # [not win]
     - freeimage
     - gts
-    - tinyxml2 7.1
+    - tinyxml2
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
     - libuuid      # [not win]
     - freeimage
     - gts
-    - {{ pin_compatible('tinyxml2', max_pin='x.x') }}
+    - tinyxml2
 
 test:
   commands:
