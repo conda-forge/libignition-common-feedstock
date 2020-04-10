@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "3.4.0" %}
+{% set version = "3.5.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,13 +9,13 @@ package:
 
 source:
   - url: https://bitbucket.org/ignitionrobotics/ign-common/get/ignition-common{{ major_version }}_{{ version }}.tar.gz
-    sha256: 0b4b504f808b02f5dad9e053b4bbfa3ffce5c590b2c360537e9747fabb15853f
+    sha256: 68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f
     patches:
       - fix_test_break.patch
       - librt_linkage.patch
 
 build:
-  number: 3
+  number: 0
   skip: true  # [win and vc<14 or osx]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -53,7 +53,7 @@ about:
   home: https://bitbucket.org/ignitionrobotics/ign-common
   license: Apache-2.0
   license_file: LICENSE
-  summary: 'Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.'
+  summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.
 
 extra:
   recipe-maintainers:
