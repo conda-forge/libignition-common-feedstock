@@ -32,14 +32,14 @@ requirements:
   host:
     - libignition-math6
     - dlfcn-win32  # [win]
-    - libuuid      # [linux]
+    - libuuid      # [not win]
     - freeimage
     - gts
     - tinyxml2
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
-    - libuuid      # [linux]
+    - libuuid      # [not win]
     - freeimage
     - gts
     - tinyxml2
