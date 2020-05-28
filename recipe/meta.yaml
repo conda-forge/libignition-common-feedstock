@@ -12,11 +12,12 @@ source:
     sha256: 68eb6f703955ea324dbd1b24a5a9d738f203fd83e15308c4063c6b0a99827f2f
     patches:
       - fix_test_break.patch
-      - librt_linkage.patch
+      - librt_linkage.patch  # [linux]
+      - framework.patch  # [osx]
 
 build:
-  number: 0
-  skip: true  # [win and vc<14 or osx]
+  number: 1
+  skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
 
@@ -58,3 +59,4 @@ about:
 extra:
   recipe-maintainers:
     - seanyen
+    - Tobias-Fischer
