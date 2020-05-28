@@ -1,11 +1,13 @@
 --- profiler/src/CMakeLists.txt	2020-05-28 11:58:53.736344882 +1000
 +++ profiler/src/CMakeLists.framework.txt	2020-05-28 12:00:42.534076081 +1000
-@@ -74,7 +74,7 @@
-   endif()
+@@ -1,5 +1,9 @@
+ option(IGN_PROFILER_REMOTERY "Enable the Remotery profiler" TRUE)
  
-   if(APPLE)
--    target_link_libraries(${profiler_target} PUBLIC ${FOUNDATION})
-+    target_link_libraries(${profiler_target} PUBLIC "-framework Foundation" "-framework Metal")
-   endif()
- endif()
- 
++if(APPLE)
++  set(IGN_PROFILER_REMOTERY FALSE)
++endif()
++
+ set(
+   PROFILER_SRCS
+   Profiler.cc
+
