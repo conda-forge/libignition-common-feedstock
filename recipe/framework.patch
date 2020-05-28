@@ -1,0 +1,11 @@
+--- profiler/src/CMakeLists.txt	2020-05-28 11:58:53.736344882 +1000
++++ profiler/src/CMakeLists.framework.txt	2020-05-28 12:00:42.534076081 +1000
+@@ -74,7 +74,7 @@
+   endif()
+ 
+   if(APPLE)
+-    target_link_libraries(${profiler_target} PUBLIC ${FOUNDATION})
++    target_link_libraries(${profiler_target} PUBLIC "-framework Foundation" "-framework Metal")
+   endif()
+ endif()
+ 
