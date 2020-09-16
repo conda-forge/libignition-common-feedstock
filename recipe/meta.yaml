@@ -8,7 +8,7 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/ignitionrobotics/ign-common/releases/tag/ignition-common{{ major_version }}_{{ version }}.tar.gz
+  - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
     sha256: e0ad7a75bd0ed5dba4e3e041941f35ccf805ac05d9370dcacde2b92819c4730c
     patches:
       - fix_test_break.patch
