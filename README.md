@@ -5,11 +5,9 @@ Home: https://bitbucket.org/ignitionrobotics/ign-common
 
 Package license: Apache-2.0
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libignition-common-feedstock/blob/master/LICENSE.txt)
 
 Summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.
-
-
 
 Current build status
 ====================
