@@ -16,7 +16,7 @@ source:
       - framework.patch  # [osx]
 
 build:
-  number: 1
+  number: 2
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -32,15 +32,15 @@ requirements:
     - pkgconfig
   host:
     - libignition-math6
-    - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    # - dlfcn-win32  # [win]
+    - libuuid      # [linux]
     - freeimage
     - gts
     - tinyxml2
   run:
     - libignition-math6
-    - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    # - dlfcn-win32  # [win]
+    - libuuid      # [linux]
     - freeimage
     - gts
     - tinyxml2
