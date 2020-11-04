@@ -37,6 +37,7 @@ requirements:
     - freeimage
     - gts
     - tinyxml2
+    - glib
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
