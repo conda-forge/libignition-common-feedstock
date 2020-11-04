@@ -2,6 +2,8 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
+glib:
+- '2.58'
 target_platform:
 - win-64
 vc:

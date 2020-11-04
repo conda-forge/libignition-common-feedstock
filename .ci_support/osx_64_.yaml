@@ -12,6 +12,8 @@ cxx_compiler:
 - clangxx
 cxx_compiler_version:
 - '10'
+glib:
+- '2.58'
 libuuid:
 - 2.32.1
 macos_machine:
