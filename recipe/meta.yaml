@@ -38,6 +38,7 @@ requirements:
     - gts
     - tinyxml2
     - glib
+    - ffmpeg
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
@@ -45,6 +46,7 @@ requirements:
     - freeimage
     - gts
     - tinyxml2
+    - ffmpeg
 
 test:
   commands:
