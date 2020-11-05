@@ -32,6 +32,7 @@ requirements:
     - pkgconfig
   host:
     - libignition-math6
+    - libignition-cmake2
     - dlfcn-win32  # [win]
     - libuuid      # [not win]
     - freeimage
