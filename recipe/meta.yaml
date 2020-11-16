@@ -40,7 +40,6 @@ requirements:
     - glib
     - ffmpeg
   run:
-    - libignition-math6
     - dlfcn-win32  # [win]
     - libuuid      # [linux]
     - freeimage
