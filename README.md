@@ -1,7 +1,7 @@
 About libignition-common3
 =========================
 
-Home: https://bitbucket.org/ignitionrobotics/ign-common
+Home: https://github.com/ignitionrobotics/ign-common
 
 Package license: Apache-2.0
 
