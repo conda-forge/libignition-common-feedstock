@@ -55,7 +55,7 @@ test:
     - if exist %PREFIX%\\Library\\include\\ignition\common{{ major_version }}\ignition\common.hh (exit 0) else (exit 1)  # [win]
 
 about:
-  home: https://bitbucket.org/ignitionrobotics/ign-common
+  home: https://github.com/ignitionrobotics/ign-common
   license: Apache-2.0
   license_file: LICENSE
   summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.
