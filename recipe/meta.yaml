@@ -34,7 +34,7 @@ requirements:
     - libignition-math6
     - libignition-cmake2
     - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    - libuuid      # [linux]
     - freeimage
     - gts
     - tinyxml2
@@ -43,7 +43,7 @@ requirements:
   run:
     - libignition-math6
     - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    - libuuid      # [linux]
     - freeimage
     - gts
     - tinyxml2
