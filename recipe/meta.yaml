@@ -16,7 +16,7 @@ source:
       - framework.patch  # [osx]
 
 build:
-  number: 2
+  number: 3
   skip: true  # [win and vc<14]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
@@ -26,7 +26,6 @@ requirements:
     - {{ compiler('cxx') }}  # [not win]
     - {{ compiler('c') }}    # [not win]
     - vs2017_win-64          # [win64]
-    - vs2017_win-32          # [win32]
     - cmake
     - ninja
     - pkgconfig
@@ -34,19 +33,17 @@ requirements:
     - libignition-math6
     - libignition-cmake2
     - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    - libuuid      # [linux]
     - freeimage
     - gts
     - tinyxml2
     - glib
     - ffmpeg
   run:
-    - libignition-math6
     - dlfcn-win32  # [win]
-    - libuuid      # [not win]
+    - libuuid      # [linux]
     - freeimage
     - gts
-    - tinyxml2
     - ffmpeg
 
 test:
@@ -55,7 +52,7 @@ test:
     - if exist %PREFIX%\\Library\\include\\ignition\common{{ major_version }}\ignition\common.hh (exit 0) else (exit 1)  # [win]
 
 about:
-  home: https://bitbucket.org/ignitionrobotics/ign-common
+  home: https://github.com/ignitionrobotics/ign-common
   license: Apache-2.0
   license_file: LICENSE
   summary: Ignition Common is a component in the ignition framework, a set of libraries designed to rapidly develop robot applications.
