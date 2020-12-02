@@ -11,6 +11,7 @@ cmake ^
     -DCMAKE_BUILD_TYPE=Release ^
     -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=True ^
     -DCMAKE_CXX_STANDARD=17 ^
+    -DUSE_EXTERNAL_TINYXML2=ON ^
     %SRC_DIR%
 if errorlevel 1 exit 1
 
