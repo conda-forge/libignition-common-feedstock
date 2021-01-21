@@ -14,7 +14,6 @@ source:
       - fix_test_break.patch
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
-      - use_external_tinyxml2.patch  # [win]
 
 build:
   number: 0
