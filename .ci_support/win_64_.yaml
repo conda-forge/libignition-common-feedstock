@@ -9,6 +9,6 @@ cxx_compiler:
 ffmpeg:
 - '4.3'
 glib:
-- '2.66'
+- '2'
 target_platform:
 - win-64
