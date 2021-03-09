@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "3.11.0" %}
+{% set version = "3.11.1" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,7 +9,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
-    sha256: 40d84816839926d48da7413a02e0d891486bab45edba0cb421d70b819de8ddae
+    sha256: 46803bf6fb220936ed0e6660ae4e016f65e8fd402ddc468cb3db3ac554f074f2
     patches:
       - fix_test_break.patch
       - librt_linkage.patch  # [linux]
