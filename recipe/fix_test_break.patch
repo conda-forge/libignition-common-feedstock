@@ -1,6 +1,8 @@
---- test/plugins/CMakeLists.txt
-+++ test/plugins/CMakeLists.txt
-@@ -8,24 +8,27 @@
+diff --git a/test/plugins/CMakeLists.txt b/test/plugins/CMakeLists.txt
+index 3d871cf0..7f665ee6 100644
+--- a/test/plugins/CMakeLists.txt
++++ b/test/plugins/CMakeLists.txt
+@@ -8,24 +8,27 @@ add_library(IGNDummyPlugins SHARED DummyPlugins.cc)
  # This variable gets put in the cache so that it is available at generation time.
  set(IGN_DUMMY_PLUGIN_PATH_HEADER "DummyPluginsPath.h" CACHE INTERNAL "Name of header which contains DummyPlugin library path")
  
@@ -33,11 +35,11 @@
 \ No newline at end of file
 +endif()
 +add_dependencies(IGNDummyPlugins IGNDummyPluginsPathHeader)
-\ No newline at end of file
-
---- test/performance/CMakeLists.txt
-+++ test/performance/CMakeLists.txt
-@@ -12,3 +12,9 @@
+diff --git a/test/performance/CMakeLists.txt b/test/performance/CMakeLists.txt
+index c21ce132..34d77a72 100644
+--- a/test/performance/CMakeLists.txt
++++ b/test/performance/CMakeLists.txt
+@@ -12,3 +12,9 @@ link_directories(${PROJECT_BINARY_DIR}/test)
  ign_build_tests(
    TYPE PERFORMANCE
    SOURCES ${tests})
