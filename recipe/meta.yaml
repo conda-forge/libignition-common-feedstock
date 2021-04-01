@@ -29,6 +29,7 @@ requirements:
   host:
     - libignition-math6
     - libignition-cmake2
+    - libignition-utils1
     - dlfcn-win32  # [win]
     - libuuid      # [linux]
     - freeimage
@@ -58,3 +59,4 @@ extra:
   recipe-maintainers:
     - seanyen
     - Tobias-Fischer
+    - traversaro
