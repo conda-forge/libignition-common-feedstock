@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "3.11.1" %}
+{% set version = "4.0.0" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,9 +9,8 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
-    sha256: 46803bf6fb220936ed0e6660ae4e016f65e8fd402ddc468cb3db3ac554f074f2
+    sha256: 06169fd8bccf41cceb08f5590e6c3059797cb85b52686e76c4e93fd7de937ac2
     patches:
-      - fix_test_break.patch
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
 
@@ -30,6 +29,7 @@ requirements:
   host:
     - libignition-math6
     - libignition-cmake2
+    - libignition-utils1
     - dlfcn-win32  # [win]
     - libuuid      # [linux]
     - freeimage
@@ -59,3 +59,4 @@ extra:
   recipe-maintainers:
     - seanyen
     - Tobias-Fischer
+    - traversaro
