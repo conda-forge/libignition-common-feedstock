@@ -12,7 +12,7 @@ else
   NUM_PARALLEL=
 fi
 
-cmake .. \
+cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$PREFIX \
