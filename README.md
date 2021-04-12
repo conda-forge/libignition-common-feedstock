@@ -69,6 +69,13 @@ Current build status
                 </a>
               </td>
             </tr><tr>
+              <td>osx_arm64</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8853&branchName=master">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/libignition-common-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
               <td>win_64</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=8853&branchName=master">
@@ -97,6 +104,7 @@ Installing `libignition-common4` from the `conda-forge` channel can be achieved 
 
 ```
 conda config --add channels conda-forge
+conda config --set channel_priority strict
 ```
 
 Once the `conda-forge` channel has been enabled, `libignition-common4` can be installed with:
@@ -177,4 +185,5 @@ Feedstock Maintainers
 
 * [@Tobias-Fischer](https://github.com/Tobias-Fischer/)
 * [@seanyen](https://github.com/seanyen/)
+* [@traversaro](https://github.com/traversaro/)
 
