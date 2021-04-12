@@ -12,13 +12,16 @@ else
   NUM_PARALLEL=
 fi
 
-cmake .. \
+cmake ${CMAKE_ARGS} .. \
       -G "Ninja" \
       -DCMAKE_BUILD_TYPE=Release \
       -DCMAKE_PREFIX_PATH=$PREFIX -DCMAKE_INSTALL_PREFIX=$PREFIX \
       -DCMAKE_INSTALL_LIBDIR=lib \
       -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=True \
       -DCMAKE_CXX_STANDARD=17 \
+      -DFREEIMAGE_RUNS:BOOL=ON \
+      -DFREEIMAGE_RUNS__TRYRUN_OUTPUT:STRING="" \
+      -DFREEIMAGE_COMPILES:BOOL=ON \
       ${IGN_TEST_CMD}
 
 cmake --build . --config Release ${NUM_PARALLEL}
