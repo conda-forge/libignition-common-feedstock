@@ -13,6 +13,7 @@ source:
     patches:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
+      - macro_path_binary_relocation  # [linux]
 
 build:
   number: 2
@@ -23,6 +24,8 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - git
+    - patch
     - cmake
     - ninja
     - pkgconfig
