@@ -16,7 +16,7 @@ source:
       - macro_path_binary_relocation  # [linux]
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
