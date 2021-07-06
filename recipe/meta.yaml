@@ -13,7 +13,7 @@ source:
     patches:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
-      - macro_path_binary_relocation.patch  # [linux]
+      - macro_path_binary_relocation.patch
 
 build:
   number: 3
