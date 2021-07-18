@@ -53,7 +53,7 @@ test:
     - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-av.so  # [linux]
     - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-graphics.dylib  # [osx]
     - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-av.dylib  # [osx]
-    - test -f ${PREFIX}/lib/cmake/ignition-msgs{{ major_version }}/ignition-msgs{{ major_version }}-config.cmake  # [not win]
+    - test -f ${PREFIX}/lib/cmake/ignition-common{{ major_version }}/ignition-common{{ major_version }}-config.cmake  # [not win]
     - if exist %PREFIX%\\Library\\include\\ignition\common{{ major_version }}\ignition\common.hh (exit 0) else (exit 1)  # [win]
     - if exist $PREFIX$\\Library\\lib\\ignition-common{{ major_version }}-graphics.lib (exit 0) else (exit 1)  # [win]
     - if exist $PREFIX$\\Library\\lib\\ignition-common{{ major_version }}-av.lib (exit 0) else (exit 1)  # [win]
