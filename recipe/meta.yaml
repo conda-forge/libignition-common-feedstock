@@ -1,14 +1,15 @@
 {% set base_name = "libignition-common" %}
-{% set version = "4.1.0" %}
-{% set major_version = version.split('.')[0] %}
+{% set version = "4_4.1.0" %}
+{% set version_clean = version.split('_')[1] %}
+{% set major_version = version.split('_')[0] %}
 {% set name = base_name + major_version %}
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: {{ version_clean }}
 
 source:
-  - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
+  - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ version }}.tar.gz
     sha256: b6d223fb30a053385b4b86f45db2684d28acde280d64272eb84437431513d5b5
     patches:
       - librt_linkage.patch  # [linux]
@@ -16,7 +17,7 @@ source:
       - macro_path_binary_relocation.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
@@ -48,7 +49,18 @@ requirements:
 test:
   commands:
     - test -f ${PREFIX}/include/ignition/common{{ major_version }}/ignition/common.hh  # [not win]
+    - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-graphics.so  # [linux]
+    - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-av.so  # [linux]
+    - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-graphics.dylib  # [osx]
+    - test -f ${PREFIX}/lib/libignition-common{{ major_version }}-av.dylib  # [osx]
+    - test -f ${PREFIX}/lib/cmake/ignition-common{{ major_version }}/ignition-common{{ major_version }}-config.cmake  # [not win]
     - if exist %PREFIX%\\Library\\include\\ignition\common{{ major_version }}\ignition\common.hh (exit 0) else (exit 1)  # [win]
+    - if exist $PREFIX$\\Library\\lib\\ignition-common{{ major_version }}-graphics.lib (exit 0) else (exit 1)  # [win]
+    - if exist $PREFIX$\\Library\\lib\\ignition-common{{ major_version }}-av.lib (exit 0) else (exit 1)  # [win]
+    - if exist $PREFIX$\\Library\\bin\\ignition-common{{ major_version }}-graphics.dll (exit 0) else (exit 1)  # [win]
+    - if exist $PREFIX$\\Library\\bin\\ignition-common{{ major_version }}-av.dll (exit 0) else (exit 1)  # [win]
+    - if exist %PREFIX%\\Library\\lib\\cmake\\ignition-common{{ major_version }}\\ignition-common{{ major_version }}-config.cmake (exit 0) else (exit 1)  # [win]
+
 
 about:
   home: https://github.com/ignitionrobotics/ign-common
