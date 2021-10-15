@@ -23,7 +23,7 @@ ffmpeg:
 glib:
 - '2'
 libuuid:
-- 2.32.1
+- '2'
 pin_run_as_build:
   libuuid:
     max_pin: x
