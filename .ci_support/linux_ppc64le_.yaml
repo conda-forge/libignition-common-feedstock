@@ -15,7 +15,7 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-ppc64le
 ffmpeg:
-- '4.4'
+- '5'
 glib:
 - '2'
 libuuid:
