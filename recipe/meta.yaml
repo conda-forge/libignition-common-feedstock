@@ -14,6 +14,7 @@ source:
       - fix_test_break.patch
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
+      - 325.patch
 
 build:
   number: 2
