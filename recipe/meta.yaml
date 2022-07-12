@@ -8,8 +8,8 @@ package:
   version: {{ version }}
 
 source:
-  - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
-    sha256: 391a51a4a4de1cd1dab2a2b77811d29d06add1e2beeb40422ef6ee34d5ac8811
+  - url: https://github.com/gazebosim/gz-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
+    sha256: 61c642ae49b1b4afebc2fce28f8a6cb06bc408e7b06cfcd2d1a57a3c9ed23c41
     patches:
       - fix_test_break.patch
       - librt_linkage.patch  # [linux]
