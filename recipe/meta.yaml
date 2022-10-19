@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "4_4.5.1" %}
+{% set version = "4_4.6.1" %}
 {% set version_clean = version.split('_')[1] %}
 {% set major_version = version.split('_')[0] %}
 {% set name = base_name + major_version %}
@@ -17,7 +17,7 @@ source:
       - macro_path_binary_relocation.patch
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
