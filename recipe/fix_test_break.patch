@@ -35,9 +35,9 @@
 +add_dependencies(IGNDummyPlugins IGNDummyPluginsPathHeader)
 \ No newline at end of file
 
---- test/performance/CMakeLists.txt
-+++ test/performance/CMakeLists.txt
-@@ -12,3 +12,9 @@
+--- a/test/performance/CMakeLists.txt
++++ b/test/performance/CMakeLists.txt
+@@ -12,3 +12,9 @@ link_directories(${PROJECT_BINARY_DIR}/test)
  ign_build_tests(
    TYPE PERFORMANCE
    SOURCES ${tests})
