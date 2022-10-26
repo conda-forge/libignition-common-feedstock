@@ -13,6 +13,7 @@ source:
     patches:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
+      - fix_test_break.patch
 
 build:
   number: 0
