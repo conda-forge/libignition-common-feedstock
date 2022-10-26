@@ -1,6 +1,6 @@
 --- test/plugins/CMakeLists.txt
 +++ test/plugins/CMakeLists.txt
-@@ -8,24 +8,27 @@
+@@ -14,24 +14,27 @@ set_property(TARGET IGNDummyPlugins PROPERTY CXX_STANDARD 11)
  # This variable gets put in the cache so that it is available at generation time.
  set(IGN_DUMMY_PLUGIN_PATH_HEADER "DummyPluginsPath.h" CACHE INTERNAL "Name of header which contains DummyPlugin library path")
  
@@ -29,12 +29,8 @@
        COMMAND echo
        ARGS "${header_text}" > ${PROJECT_BINARY_DIR}/${IGN_DUMMY_PLUGIN_PATH_HEADER}
        VERBATIM)
--endif()
-\ No newline at end of file
-+endif()
+ endif()
 +add_dependencies(IGNDummyPlugins IGNDummyPluginsPathHeader)
-\ No newline at end of file
-
 --- test/performance/CMakeLists.txt
 +++ test/performance/CMakeLists.txt
 @@ -12,3 +12,9 @@ link_directories(${PROJECT_BINARY_DIR}/test)
