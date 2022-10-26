@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "3.13.2" %}
+{% set version = "3.15.1" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
@@ -9,14 +9,14 @@ package:
 
 source:
   - url: https://github.com/gazebosim/gz-common/archive/ignition-common{{ major_version }}_{{ version }}.tar.gz
-    sha256: 61c642ae49b1b4afebc2fce28f8a6cb06bc408e7b06cfcd2d1a57a3c9ed23c41
+    sha256: fc1bf79eb53e3b56b4b8e0eb6965ec68982da18ea42154dd4fd891ac739d65fb
     patches:
-      - fix_test_break.patch
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
+      - fix_test_break.patch
 
 build:
-  number: 3
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 

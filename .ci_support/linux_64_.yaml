@@ -15,14 +15,11 @@ cxx_compiler_version:
 docker_image:
 - quay.io/condaforge/linux-anvil-cos7-x86_64
 ffmpeg:
-- '4.4'
+- '5'
 glib:
 - '2'
 libuuid:
 - '2'
-pin_run_as_build:
-  libuuid:
-    max_pin: x
 target_platform:
 - linux-64
 tinyxml2:
