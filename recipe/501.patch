@@ -1,0 +1,12 @@
+diff --git a/graphics/include/gz/common/Image.hh b/graphics/include/gz/common/Image.hh
+index b74331bf..8782e816 100644
+--- a/graphics/include/gz/common/Image.hh
++++ b/graphics/include/gz/common/Image.hh
+@@ -17,6 +17,7 @@
+ #ifndef GZ_COMMON_IMAGE_HH_
+ #define GZ_COMMON_IMAGE_HH_
+ 
++#include <cstring>
+ #include <limits>
+ #include <memory>
+ #include <string>
