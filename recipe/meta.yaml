@@ -15,6 +15,7 @@ source:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
       - macro_path_binary_relocation.patch
+      - fix_ffmpeg6.patch
 
 build:
   number: 1
