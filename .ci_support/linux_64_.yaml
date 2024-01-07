@@ -3,7 +3,7 @@ c_compiler:
 c_compiler_version:
 - '12'
 cdt_name:
-- cos7
+- cos6
 channel_sources:
 - conda-forge
 channel_targets:
@@ -13,17 +13,17 @@ cxx_compiler:
 cxx_compiler_version:
 - '12'
 docker_image:
-- quay.io/condaforge/linux-anvil-ppc64le
+- quay.io/condaforge/linux-anvil-cos7-x86_64
 ffmpeg:
-- '5'
+- '6'
 glib:
 - '2'
 libuuid:
 - '2'
 target_platform:
-- linux-ppc64le
+- linux-64
 tinyxml2:
-- '9'
+- '10'
 zip_keys:
 - - c_compiler_version
   - cxx_compiler_version
