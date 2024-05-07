@@ -1,27 +1,29 @@
+MACOSX_DEPLOYMENT_TARGET:
+- '11.0'
 c_compiler:
-- gcc
+- clang
 c_compiler_version:
-- '12'
-cdt_name:
-- cos6
+- '16'
+c_stdlib:
+- macosx_deployment_target
+c_stdlib_version:
+- '11.0'
 channel_sources:
 - conda-forge
 channel_targets:
 - conda-forge main
 cxx_compiler:
-- gxx
+- clangxx
 cxx_compiler_version:
-- '12'
-docker_image:
-- quay.io/condaforge/linux-anvil-cos7-x86_64
+- '16'
 ffmpeg:
-- '6'
+- '7'
 glib:
 - '2'
-libuuid:
-- '2'
+macos_machine:
+- arm64-apple-darwin20.0.0
 target_platform:
-- linux-64
+- osx-arm64
 tinyxml2:
 - '10'
 zip_keys:
