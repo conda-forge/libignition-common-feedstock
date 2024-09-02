@@ -16,9 +16,10 @@ source:
       - fix_test_break.patch
       - fix_ffmpeg6.patch
       - 501.patch
+      - 517.patch
 
 build:
-  number: 4
+  number: 5
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
