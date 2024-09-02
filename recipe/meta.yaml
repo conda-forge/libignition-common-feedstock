@@ -16,6 +16,7 @@ source:
       - framework.patch  # [osx]
       - macro_path_binary_relocation.patch
       - fix_ffmpeg6.patch
+      - 528.patch
 
 build:
   number: 4
