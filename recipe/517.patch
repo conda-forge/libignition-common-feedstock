@@ -1,0 +1,22 @@
+From aaf780ea9340282c130ce806ff06506d0626e606 Mon Sep 17 00:00:00 2001
+From: Angelo Elias Dal Zotto <angelodalzotto97@gmail.com>
+Date: Wed, 31 May 2023 08:44:54 -0300
+Subject: [PATCH] Include cstdint to build with GCC 13
+
+Signed-off-by: Angelo Elias Dal Zotto <angelodalzotto97@gmail.com>
+---
+ profiler/src/ProfilerImpl.hh | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/profiler/src/ProfilerImpl.hh b/profiler/src/ProfilerImpl.hh
+index 82d3ddad2..874d11fca 100644
+--- a/profiler/src/ProfilerImpl.hh
++++ b/profiler/src/ProfilerImpl.hh
+@@ -19,6 +19,7 @@
+ #define GZ_COMMON_PROFILERIMPL_HH_
+ 
+ #include <string>
++#include <cstdint>
+ 
+ namespace ignition
+ {
