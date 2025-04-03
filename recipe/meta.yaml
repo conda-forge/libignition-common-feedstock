@@ -1,5 +1,5 @@
 {% set base_name = "libignition-common" %}
-{% set version = "3.15.1" %}
+{% set version = "3.17.1" %}
 {% set major_version = version.split('.')[0] %}
 {% set name = base_name + major_version %}
 
