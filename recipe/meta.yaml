@@ -10,7 +10,7 @@ package:
 
 source:
   - url: https://github.com/ignitionrobotics/ign-common/archive/ignition-common{{ version }}.tar.gz
-    sha256: 97f87bf0fc9cb9505dcc478e751b6900ad654c61aa698e760e5e76b4811dc679
+    sha256: bb323600b7cc584b089a32ef10390afe8292e8104c182bf2b0714c71b8867d27
     patches:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
@@ -19,7 +19,7 @@ source:
       - 528.patch
 
 build:
-  number: 5
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
