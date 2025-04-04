@@ -14,6 +14,7 @@ source:
       - librt_linkage.patch  # [linux]
       - framework.patch  # [osx]
       - fix_test_break.patch
+      - disable_rmt_apple_test.patch
 
 
 build:
