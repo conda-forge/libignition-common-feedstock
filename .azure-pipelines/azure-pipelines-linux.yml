@@ -8,30 +8,18 @@ jobs:
     vmImage: ubuntu-latest
   strategy:
     matrix:
-      linux_64_ffmpeg6:
-        CONFIG: linux_64_ffmpeg6
+      linux_64_:
+        CONFIG: linux_64_
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_ffmpeg7:
-        CONFIG: linux_64_ffmpeg7
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_aarch64_:
+        CONFIG: linux_aarch64_
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_ffmpeg6:
-        CONFIG: linux_aarch64_ffmpeg6
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-x86_64:alma9
+      linux_ppc64le_:
+        CONFIG: linux_ppc64le_
         UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_aarch64_ffmpeg7:
-        CONFIG: linux_aarch64_ffmpeg7
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_ppc64le_ffmpeg6:
-        CONFIG: linux_ppc64le_ffmpeg6
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
-      linux_ppc64le_ffmpeg7:
-        CONFIG: linux_ppc64le_ffmpeg7
-        UPLOAD_PACKAGES: 'True'
-        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-ppc64le:alma9
   timeoutInMinutes: 360
   variables: {}
 
