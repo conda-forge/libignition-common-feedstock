@@ -1,0 +1,24 @@
+From 863e52f4b1ffac802f8b2804ec8122cb64a0b2b8 Mon Sep 17 00:00:00 2001
+From: Silvio Traversaro <silvio@traversaro.it>
+Date: Fri, 4 Apr 2025 14:59:30 +0200
+Subject: [PATCH] Update CMakeLists.txt
+
+Signed-off-by: Silvio Traversaro <silvio@traversaro.it>
+---
+ profiler/src/CMakeLists.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/profiler/src/CMakeLists.txt b/profiler/src/CMakeLists.txt
+index 32636a69..42de9d16 100644
+--- a/profiler/src/CMakeLists.txt
++++ b/profiler/src/CMakeLists.txt
+@@ -10,7 +10,8 @@ set(
+   Profiler_Disabled_TEST.cc
+ )
+ 
+-if(NOT WIN32)
++# See https://github.com/conda-forge/gz-common-feedstock/pull/14#issuecomment-1532137418
++if(NOT WIN32 AND NOT APPLE)
+   list(APPEND PROFILER_TESTS Profiler_Error_TEST.cc)
+ endif()
+
