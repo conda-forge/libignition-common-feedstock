@@ -73,6 +73,7 @@ about:
 
 extra:
   recipe-maintainers:
+    - j-rivero
     - seanyen
     - Tobias-Fischer
     - traversaro
