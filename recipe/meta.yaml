@@ -17,9 +17,10 @@ source:
       - macro_path_binary_relocation.patch
       - 528.patch
       - disable_rmt_apple_test.patch
+      - windows_chrono.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
