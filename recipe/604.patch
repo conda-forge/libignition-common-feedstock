@@ -1,0 +1,98 @@
+From e1a21e064ed799c830389a8c139a297215c9715f Mon Sep 17 00:00:00 2001
+From: bchoineubility <135582251+bchoineubility@users.noreply.github.com>
+Date: Mon, 11 Mar 2024 23:59:59 +0900
+Subject: [PATCH 1/2] Fix compatibility with FFmpeg5.0 (#581)
+
+Signed-off-by: bchoi <bchoi@neubility.co.kr>
+---
+ av/src/AudioDecoder.cc | 4 ++++
+ 1 file changed, 4 insertions(+)
+
+diff --git a/av/src/AudioDecoder.cc b/av/src/AudioDecoder.cc
+index dcf3f473..fbb63f8d 100644
+--- a/av/src/AudioDecoder.cc
++++ b/av/src/AudioDecoder.cc
+@@ -157,7 +157,11 @@ bool AudioDecoder::Decode(uint8_t **_outBuffer, unsigned int *_outBufferSize)
+         // decodedFrame->linesize[0].
+         int size = decodedFrame->nb_samples *
+           av_get_bytes_per_sample(this->data->codecCtx->sample_fmt) *
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(59, 24, 100)
+           this->data->codecCtx->ch_layout.nb_channels;
++#else
++          this->data->codecCtx->channels;
++#endif
+         // Resize the audio buffer as necessary
+         if (*_outBufferSize + size > maxBufferSize)
+         {
+
+From ac3fd976334ce3712f773179dd6c820ba286b652 Mon Sep 17 00:00:00 2001
+From: "Addisu Z. Taddese" <addisu@openrobotics.org>
+Date: Tue, 7 May 2024 16:24:50 -0500
+Subject: [PATCH 2/2] Fix deprecation warnings (#603)
+
+Signed-off-by: Addisu Z. Taddese <addisu@openrobotics.org>
+---
+ av/src/AudioDecoder.cc         | 6 ++++++
+ av/src/Video.cc                | 4 ++++
+ include/gz/common/EnumIface.hh | 7 +++++++
+ 3 files changed, 17 insertions(+)
+
+diff --git a/av/src/AudioDecoder.cc b/av/src/AudioDecoder.cc
+index fbb63f8d..c7f51489 100644
+--- a/av/src/AudioDecoder.cc
++++ b/av/src/AudioDecoder.cc
+@@ -67,7 +67,13 @@ void AudioDecoder::Cleanup()
+ {
+   // Close the codec
+   if (this->data->codecCtx)
++  {
++#if LIBAVFORMAT_VERSION_MAJOR < 59
+     avcodec_close(this->data->codecCtx);
++#else
++    avcodec_free_context(&this->data->codecCtx);
++#endif
++  }
+ 
+   // Close the audio file
+   if (this->data->formatCtx)
+diff --git a/av/src/Video.cc b/av/src/Video.cc
+index 95d4cbdc..321d0b5b 100644
+--- a/av/src/Video.cc
++++ b/av/src/Video.cc
+@@ -83,7 +83,11 @@ void Video::Cleanup()
+   avformat_close_input(&this->dataPtr->formatCtx);
+ 
+   // Close the codec
++#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(57, 48, 101)
++  avcodec_free_context(&this->dataPtr->codecCtx);
++#else
+   avcodec_close(this->dataPtr->codecCtx);
++#endif
+ 
+   av_free(this->dataPtr->avFrameDst);
+ }
+diff --git a/include/gz/common/EnumIface.hh b/include/gz/common/EnumIface.hh
+index b95ce1b3..0cb6d827 100644
+--- a/include/gz/common/EnumIface.hh
++++ b/include/gz/common/EnumIface.hh
+@@ -140,6 +140,10 @@ namespace ignition
+     ///   std::cout << "Type++ Name[" << myTypeIface.Str(*i) << "]\n";
+     /// }
+     /// \verbatim
++#if defined __APPLE__ && defined __clang__
++  _Pragma("clang diagnostic push")
++  _Pragma("clang diagnostic ignored \"-Wdeprecated-declarations\"")
++#endif
+     template<typename Enum>
+     class EnumIterator
+     : std::iterator<std::bidirectional_iterator_tag, Enum>
+@@ -217,6 +221,9 @@ namespace ignition
+       /// member value ever used.
+       private: Enum c;
+     };
++#if defined __APPLE__ && defined __clang__
++  _Pragma("clang diagnostic pop")
++#endif
+ 
+     /// \brief Equality operator
+     /// \param[in] _e1 First iterator
