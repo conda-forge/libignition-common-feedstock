@@ -18,6 +18,7 @@ source:
       - 528.patch
       - disable_rmt_apple_test.patch
       - windows_chrono.patch
+      - 604.patch
 
 build:
   number: 2
