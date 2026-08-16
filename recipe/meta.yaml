@@ -15,10 +15,11 @@ source:
       - framework.patch  # [osx]
       - fix_test_break.patch
       - disable_rmt_apple_test.patch
+      - add_missing_cstdint.patch
 
 
 build:
-  number: 2
+  number: 3
   run_exports:
     - {{ pin_subpackage(name, max_pin='x') }}
 
